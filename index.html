@@ -40,14 +40,7 @@
     .hero::before { content: ""; position: absolute; width: 54vw; height: 54vw; max-width: 760px; max-height: 760px; border-radius: 50%; background: radial-gradient(circle, rgba(216,217,203,.055), transparent 67%); pointer-events: none; }
     .hero-collage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
     .hero-shot { position: absolute; display: block; width: clamp(170px, 20vw, 330px); height: 37vh; object-fit: cover; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 20px 70px rgba(0,0,0,.4); opacity: .72; pointer-events: auto; transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--hero-tilt-y, 0deg)) rotateY(var(--hero-tilt-x, 0deg)) rotate(var(--hero-rotation, 0deg)); transition: transform .22s ease, filter .3s ease, opacity .3s ease; animation: drift 8s ease-in-out infinite alternate; }
-    .hero-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .hero-shot:nth-child(even) { animation-delay: -4s; }
-    .hero-shot-link { cursor: pointer; }
-    .hero-shot-link::after { content: "PLAY REEL ↗"; position: absolute; left: 12px; bottom: 12px; padding: 8px 10px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; color: white; background: rgba(17,17,15,.58); font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
-    .hero-shot-link:hover::after, .hero-shot-link:focus-visible::after { opacity: 1; transform: translateY(0); }
-    .hero-shot-link:focus-visible { outline: 2px solid var(--lime); outline-offset: 4px; }
-    .hero-reel-tile { left: 53%; top: -5%; z-index: 0; width: clamp(280px, 21vw, 340px); height: 42vh; max-height: 400px; overflow: hidden; background: #080807; border: 1px solid rgba(255,255,255,.16); box-shadow: 0 24px 70px rgba(0,0,0,.5); }
-    .hero-reel-tile iframe { display: block; width: 100%; height: 100%; border: 0; background: #080807; }
     .hero-shot.is-active { opacity: .96; }
     .hero-shot.shot-a { left: -3%; top: -15%; width: 20vw; height: 36vh; --hero-rotation: -5deg; }
     .hero-shot.shot-b { left: 27%; top: -22%; width: 21vw; height: 40vh; --hero-rotation: 2deg; }
@@ -149,7 +142,6 @@
       .hero-shot.shot-f { left: 17%; bottom: -17%; width: 43vw; height: 29vh; }
       .hero-shot.shot-g { left: -20%; bottom: -15%; width: 38vw; height: 26vh; }
       .hero-shot.shot-h { right: 13%; bottom: -20%; width: 41vw; height: 27vh; }
-      .hero-reel-tile { left: 55%; top: 1%; width: 42vw; min-width: 0; height: 29vh; max-height: none; }
       .hero-copy { max-width: 360px; margin-top: 25px; }
       .outline-link { min-width: 190px; min-height: 52px; }
       .section { padding: 64px 0 68px; }
@@ -188,7 +180,7 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-collage"><a class="hero-shot hero-shot-link shot-a" href="https://www.instagram.com/reel/DcJlVd6R6QM/?utm_source=ig_web_copy_link&amp;srtk=MWQ1ZGUxMzBkMA==" target="_blank" rel="noopener noreferrer" aria-label="Watch the construction reel on Instagram"><img src="hero-frame-1.jpg" alt="" loading="eager"></a><img class="hero-shot shot-b" src="hero-frame-2.jpg" alt="" loading="eager"><img class="hero-shot shot-c" src="hero-frame-3.jpg" alt="" loading="eager"><img class="hero-shot shot-d" src="hero-frame-4.jpg" alt="" loading="eager"><img class="hero-shot shot-e" src="hero-frame-5.jpg" alt="" loading="eager"><img class="hero-shot shot-f" src="hero-frame-6.jpg" alt="" loading="eager"><img class="hero-shot shot-g" src="hero-frame-7.jpg" alt="" loading="eager"><img class="hero-shot shot-h" src="hero-frame-8.jpg" alt="" loading="eager"><div class="hero-shot hero-reel-tile" aria-label="Instagram reel player"><iframe src="https://www.instagram.com/reel/DcJlVd6R6QM/embed/" title="Five One Instagram reel" loading="eager" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+      <div class="hero-collage" aria-hidden="true"><img class="hero-shot shot-a" src="hero-frame-1.jpg" alt="" loading="eager"><img class="hero-shot shot-b" src="hero-frame-2.jpg" alt="" loading="eager"><img class="hero-shot shot-c" src="hero-frame-3.jpg" alt="" loading="eager"><img class="hero-shot shot-d" src="hero-frame-4.jpg" alt="" loading="eager"><img class="hero-shot shot-e" src="hero-frame-5.jpg" alt="" loading="eager"><img class="hero-shot shot-f" src="hero-frame-6.jpg" alt="" loading="eager"><img class="hero-shot shot-g" src="hero-frame-7.jpg" alt="" loading="eager"><img class="hero-shot shot-h" src="hero-frame-8.jpg" alt="" loading="eager"></div>
       <div class="hero-content">
         <p class="pronunciation">(five · one)</p>
         <h1><span>FIVE ONE</span></h1>
