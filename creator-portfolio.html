@@ -95,11 +95,7 @@
 
     .video-feature { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 42px; }
     .video-copy p:not(.kicker) { max-width: 400px; color: var(--soft); font-size: 13px; line-height: 1.7; }
-    .video-box { position: relative; display: grid; place-items: center; aspect-ratio: 16/9; overflow: hidden; background: radial-gradient(ellipse at 70% 45%,rgba(219,201,154,.7),transparent 19%),linear-gradient(130deg,#474b43,#20221f 54%,#5c5343); }
-    .video-box::before { content: "LATEST VIDEO"; position: absolute; left: 18px; top: 16px; color: rgba(255,255,255,.72); font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; }
-    .play { width: 62px; height: 62px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; background: rgba(255,255,255,.12); backdrop-filter: blur(12px); transition: .25s; }
-    .play:hover { transform: scale(1.08); background: rgba(255,255,255,.24); }
-    .play svg { width: 18px; height: 18px; margin-left: 3px; }
+    .video-box { display: block; width: 100%; height: auto; max-height: min(72vh,720px); object-fit: contain; background: #050505; }
 
     .about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: start; }
     .about-copy { max-width: 590px; color: var(--soft); font-size: 16px; line-height: 1.75; }
@@ -219,8 +215,8 @@
 
     <section class="section reveal" id="latest-video">
       <div class="shell video-feature">
-        <div class="video-copy"><p class="kicker">Watch / Latest</p><h2>More than<br>a still frame.</h2><p>Add a link to your latest YouTube video, reel, or featured project here.</p></div>
-        <a class="video-box" href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noreferrer" aria-label="Open featured video on Instagram"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.8c0-.8.9-1.3 1.6-.9l9.1 5.2a1 1 0 0 1 0 1.8l-9.1 5.2a1.05 1.05 0 0 1-1.6-.9V5.8Z"/></svg></span></a>
+        <div class="video-copy"><p class="kicker">Watch / Latest</p><h2>SOSON<br>Construction.</h2><p>SOSON Construction Reel 2 · Latest project reel.</p></div>
+        <video class="video-box" controls playsinline preload="metadata" aria-label="SOSON Construction Reel 2"><source src="soson-construction-reel.mp4" type="video/mp4">Your browser does not support embedded video.</video>
       </div>
     </section>
 
