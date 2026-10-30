@@ -25,6 +25,9 @@
     input::placeholder, textarea::placeholder { color:#777770; }
     input:focus, textarea:focus { border-color:var(--ink); }
     textarea { min-height:110px; resize:vertical; }
+    .form-honey { display:none!important; }
+    .form-status { margin:0 0 22px; color:var(--ink); font-size:14px; line-height:1.6; }
+    .form-note { margin:19px 0 0; color:var(--dim); font-size:11px; line-height:1.6; }
     .submit { display:inline-flex; min-height:55px; width:max-content; align-items:center; justify-content:center; margin-top:12px; padding:0 26px; border:1px solid rgba(241,239,232,.85); border-radius:999px; background:transparent; color:var(--ink); cursor:pointer; font:11px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.16em; transition:background .2s,color .2s,transform .2s; }
     .submit:hover { transform:translateY(-2px); background:var(--ink); color:var(--bg); }
     .direct { margin:33px 0 0; color:var(--dim); font-size:12px; line-height:1.7; }
@@ -43,26 +46,27 @@
   <main>
     <p class="eyebrow">Five One · Contact</p>
     <h1>Say hello.</h1>
-    <p class="intro">For inquiries, collaborations, or just to say hello, send a note below. It will open a new email in your mail app, ready for you to send.</p>
-    <form id="contact-form">
+    <p class="intro">For inquiries, collaborations, or just to say hello, send a note below. Your message will be delivered directly to Five One.</p>
+    <p id="form-status" class="form-status" role="status" aria-live="polite" hidden>Thanks — your message is on its way. I’ll reply as soon as I can.</p>
+    <form id="contact-form" action="https://formsubmit.co/fiveoneagency@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New project inquiry from Five One website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://yeoflagosdev.github.io/Michael-Onoh-/contact.html?sent=1">
+      <input type="hidden" name="_url" value="https://yeoflagosdev.github.io/Michael-Onoh-/contact.html">
       <label>Your name<input name="name" autocomplete="name" placeholder="Name" required></label>
       <label>Your email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
       <label>Your message<textarea name="message" placeholder="Tell me a little about your project…" required></textarea></label>
+      <div class="form-honey" aria-hidden="true"><label>Leave this field empty<input name="_honey" tabindex="-1" autocomplete="off"></label></div>
       <button class="submit" type="submit">PREPARE EMAIL ↗</button>
     </form>
+    <p class="form-note">Messages are handled by FormSubmit and forwarded to Five One. FormSubmit retains submissions for up to 30 days.</p>
     <p class="direct">Prefer to email directly? <a id="direct-email" href="mailto:fiveoneagency@gmail.com">fiveoneagency@gmail.com</a></p>
   </main>
   <footer><span>© 2026 FIVE ONE</span><a href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noreferrer">@fiveone.agency ↗</a></footer>
   <script>
-    // Change this address to the inbox where you want collaboration inquiries delivered.
-    const recipient = 'fiveoneagency@gmail.com';
-    document.getElementById('contact-form').addEventListener('submit', event => {
-      event.preventDefault();
-      const values = new FormData(event.currentTarget);
-      const subject = encodeURIComponent(`Portfolio inquiry from ${values.get('name')}`);
-      const body = encodeURIComponent(`Name: ${values.get('name')}\nEmail: ${values.get('email')}\n\n${values.get('message')}`);
-      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    });
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      document.getElementById('form-status').hidden = false;
+    }
   </script>
 </body>
 </html>
