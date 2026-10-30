@@ -39,15 +39,17 @@
     .hero { min-height: 100svh; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding: 110px 24px 110px; text-align: center; }
     .hero::before { content: ""; position: absolute; width: 54vw; height: 54vw; max-width: 760px; max-height: 760px; border-radius: 50%; background: radial-gradient(circle, rgba(216,217,203,.055), transparent 67%); pointer-events: none; }
     .hero-collage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    .hero-shot { position: absolute; display: block; width: clamp(115px, 20vw, 265px); aspect-ratio: .78; border: 1px solid rgba(255,255,255,.12); background-size: cover; box-shadow: 0 20px 70px rgba(0,0,0,.35); opacity: .74; pointer-events: auto; transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--hero-tilt-y, 0deg)) rotateY(var(--hero-tilt-x, 0deg)) rotate(var(--hero-rotation, 0deg)); transition: transform .22s ease, filter .3s ease; animation: drift 8s ease-in-out infinite alternate; }
+    .hero-shot { position: absolute; display: block; width: clamp(170px, 20vw, 330px); height: 37vh; object-fit: cover; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 20px 70px rgba(0,0,0,.4); opacity: .72; pointer-events: auto; transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--hero-tilt-y, 0deg)) rotateY(var(--hero-tilt-x, 0deg)) rotate(var(--hero-rotation, 0deg)); transition: transform .22s ease, filter .3s ease, opacity .3s ease; animation: drift 8s ease-in-out infinite alternate; }
     .hero-shot:nth-child(even) { animation-delay: -4s; }
     .hero-shot.is-active { opacity: .96; }
-    .hero-shot.shot-a { left: 17%; top: -17%; --hero-rotation: -8deg; background-image: radial-gradient(ellipse at 55% 30%,#e8c9aa 0 14%,transparent 15%),linear-gradient(145deg,transparent 42%,#d6d1c5 43% 47%,transparent 48%),linear-gradient(130deg,#718074,#343c34 60%,#a4937d); }
-    .hero-shot.shot-b { right: 9%; top: 1%; --hero-rotation: 7deg; background-image: radial-gradient(circle at 55% 35%,#dbc2a1 0 13%,transparent 14%),linear-gradient(145deg,#675e50,#a09a83 48%,#39433a); }
-    .hero-shot.shot-c { left: -8%; top: 29%; --hero-rotation: 7deg; background-image: linear-gradient(155deg,transparent 44%,#b5c4b5 45% 72%,transparent 73%),linear-gradient(130deg,#48534b,#9c9b82 53%,#333a33); }
-    .hero-shot.shot-d { right: -8%; top: 25%; --hero-rotation: -7deg; background-image: radial-gradient(ellipse at 55% 37%,#dfc2aa 0 15%,transparent 16%),linear-gradient(145deg,#292d29,#777a6c 56%,#424841); }
-    .hero-shot.shot-e { left: 24%; bottom: -26%; --hero-rotation: 5deg; background-image: radial-gradient(ellipse at 50% 35%,#e3c4a7 0 14%,transparent 15%),linear-gradient(135deg,#a25e42,#39413a 55%,#c4a983); }
-    .hero-shot.shot-f { right: 22%; bottom: -25%; --hero-rotation: -5deg; background-image: radial-gradient(circle at 54% 32%,#e3d1ad 0 13%,transparent 14%),linear-gradient(145deg,#4a5247,#aa9a7c 60%,#3d463e); }
+    .hero-shot.shot-a { left: -3%; top: -15%; width: 20vw; height: 36vh; --hero-rotation: -5deg; }
+    .hero-shot.shot-b { left: 27%; top: -22%; width: 21vw; height: 40vh; --hero-rotation: 2deg; }
+    .hero-shot.shot-c { right: -3%; top: -18%; width: 20vw; height: 36vh; --hero-rotation: 5deg; }
+    .hero-shot.shot-d { left: 2%; top: 31%; width: 20vw; height: 39vh; --hero-rotation: -4deg; }
+    .hero-shot.shot-e { right: 2%; top: 30%; width: 20vw; height: 41vh; --hero-rotation: 4deg; }
+    .hero-shot.shot-f { left: 30%; bottom: -23%; width: 21vw; height: 38vh; --hero-rotation: 4deg; }
+    .hero-shot.shot-g { left: -6%; bottom: -17%; width: 19vw; height: 30vh; --hero-rotation: 5deg; }
+    .hero-shot.shot-h { right: 15%; bottom: -26%; width: 22vw; height: 36vh; --hero-rotation: -5deg; }
     .hero-content { position: relative; z-index: 1; width: 100%; pointer-events: none; }
     .hero-content a { pointer-events: auto; }
     .hero h1 { text-shadow: 0 2px 28px rgba(17,17,15,.48); }
@@ -82,6 +84,7 @@
     .art-seven::before { background: radial-gradient(ellipse at 58% 42%,#d6bb94 0 13%,transparent 14%),linear-gradient(148deg,transparent 38%,#c9a364 39% 44%,transparent 45%),linear-gradient(135deg,#566259,#29312d 56%,#a27c55); }
     .art-eight::before { background: radial-gradient(circle at 45% 35%,#e5cbb5 0 12%,transparent 13%),linear-gradient(155deg,transparent 43%,#d7d1bd 44% 66%,transparent 67%),linear-gradient(130deg,#9b9b88,#4c5349 55%,#292c29); }
     .art-nine::before { background: radial-gradient(ellipse at 60% 32%,#f0d5b1 0 11%,transparent 12%),radial-gradient(ellipse at 50% 70%,#73584b 0 27%,transparent 28%),linear-gradient(145deg,#58574d,#b19072 52%,#343d36); }
+
     .art-one::before { background: radial-gradient(ellipse at 60% 39%,#e0c4a9 0 12%,transparent 13%),radial-gradient(ellipse at 60% 61%,#4a4940 0 24%,transparent 25%),linear-gradient(140deg,#766f5c,#343b32 52%,#a5a18d); }
     .art-two::before { background: radial-gradient(circle at 52% 36%,#e6c8a9 0 13%,transparent 14%),linear-gradient(153deg,transparent 44%,#3e4940 45% 72%,transparent 73%),linear-gradient(130deg,#7d8b7b,#bbb099 57%,#4d5148); }
     .art-three::before { background: radial-gradient(ellipse at 54% 43%,#ebc9b0 0 15%,transparent 16%),radial-gradient(ellipse at 53% 68%,#76564b 0 28%,transparent 29%),linear-gradient(145deg,#3f3f3a,#a2786b 58%,#4c5247); }
@@ -130,13 +133,15 @@
       .topbar { height: 65px; padding: 0 19px; }
       .hero { min-height: 92svh; padding-inline: 14px; }
       .hero h1 { font-size: clamp(65px, 18vw, 135px); }
-      .hero-shot { width: clamp(125px, 31vw, 205px); opacity: .58; }
-      .hero-shot.shot-a { left: 18%; top: -12%; }
-      .hero-shot.shot-b { right: -11%; top: -7%; }
-      .hero-shot.shot-c { left: -17%; top: 27%; }
-      .hero-shot.shot-d { right: -18%; top: 24%; }
-      .hero-shot.shot-e { left: 17%; bottom: -23%; }
-      .hero-shot.shot-f { right: 11%; bottom: -23%; }
+      .hero-shot { opacity: .58; }
+      .hero-shot.shot-a { left: -18%; top: -12%; width: 40vw; height: 25vh; }
+      .hero-shot.shot-b { left: 23%; top: -18%; width: 42vw; height: 28vh; }
+      .hero-shot.shot-c { right: -20%; top: -8%; width: 40vw; height: 25vh; }
+      .hero-shot.shot-d { left: -25%; top: 33%; width: 39vw; height: 25vh; }
+      .hero-shot.shot-e { right: -22%; top: 36%; width: 39vw; height: 25vh; }
+      .hero-shot.shot-f { left: 17%; bottom: -17%; width: 43vw; height: 29vh; }
+      .hero-shot.shot-g { left: -20%; bottom: -15%; width: 38vw; height: 26vh; }
+      .hero-shot.shot-h { right: 13%; bottom: -20%; width: 41vw; height: 27vh; }
       .hero-copy { max-width: 360px; margin-top: 25px; }
       .outline-link { min-width: 190px; min-height: 52px; }
       .section { padding: 64px 0 68px; }
@@ -175,7 +180,7 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-collage" aria-hidden="true"><i class="hero-shot shot-a"></i><i class="hero-shot shot-b"></i><i class="hero-shot shot-c"></i><i class="hero-shot shot-d"></i><i class="hero-shot shot-e"></i><i class="hero-shot shot-f"></i></div>
+      <div class="hero-collage" aria-hidden="true"><img class="hero-shot shot-a" src="hero-frame-1.jpg" alt="" loading="eager"><img class="hero-shot shot-b" src="hero-frame-2.jpg" alt="" loading="eager"><img class="hero-shot shot-c" src="hero-frame-3.jpg" alt="" loading="eager"><img class="hero-shot shot-d" src="hero-frame-4.jpg" alt="" loading="eager"><img class="hero-shot shot-e" src="hero-frame-5.jpg" alt="" loading="eager"><img class="hero-shot shot-f" src="hero-frame-6.jpg" alt="" loading="eager"><img class="hero-shot shot-g" src="hero-frame-7.jpg" alt="" loading="eager"><img class="hero-shot shot-h" src="hero-frame-8.jpg" alt="" loading="eager"></div>
       <div class="hero-content">
         <p class="pronunciation">(five · one)</p>
         <h1><span>FIVE ONE</span></h1>
