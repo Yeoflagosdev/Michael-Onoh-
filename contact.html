@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <title>Get in Touch — Five One</title>
+  <style>
+    :root { --bg:#11110f; --ink:#f1efe8; --soft:#b8b6b0; --dim:#777770; --rule:rgba(241,239,232,.18); font-family:Arial,Helvetica,sans-serif; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+    * { box-sizing:border-box; }
+    body { min-height:100vh; margin:0; background:radial-gradient(ellipse at 50% 35%,rgba(216,217,203,.055),transparent 42%),var(--bg); }
+    a { color:inherit; text-decoration:none; }
+    .topbar { height:78px; display:flex; align-items:center; justify-content:space-between; padding:0 4.6vw; border-bottom:1px solid var(--rule); }
+    .logo { font-size:17px; font-weight:800; letter-spacing:-.08em; }
+    .logo span { display:inline-block; width:22px; height:2px; margin-left:3px; vertical-align:middle; background:var(--ink); box-shadow:0 5px 0 var(--ink),0 -5px 0 var(--ink); }
+    .back { color:var(--soft); font:10px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.13em; transition:color .2s; }
+    .back:hover { color:var(--ink); }
+    main { width:min(100% - 44px,720px); margin:0 auto; padding:clamp(76px,13vh,145px) 0 90px; }
+    .eyebrow { margin:0 0 17px; color:var(--dim); font:11px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.19em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(64px,14vw,142px); font-weight:500; line-height:.86; letter-spacing:-.09em; }
+    .intro { max-width:515px; margin:28px 0 38px; color:var(--soft); font-size:15px; line-height:1.7; }
+    form { display:grid; gap:19px; }
+    label { display:grid; gap:9px; color:#d3d1ca; font:10px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.13em; text-transform:uppercase; }
+    input, textarea { width:100%; padding:14px 0; border:0; border-bottom:1px solid var(--rule); border-radius:0; outline:none; background:transparent; color:var(--ink); font:15px Arial,Helvetica,sans-serif; letter-spacing:normal; text-transform:none; transition:border-color .2s; }
+    input::placeholder, textarea::placeholder { color:#777770; }
+    input:focus, textarea:focus { border-color:var(--ink); }
+    textarea { min-height:110px; resize:vertical; }
+    .submit { display:inline-flex; min-height:55px; width:max-content; align-items:center; justify-content:center; margin-top:12px; padding:0 26px; border:1px solid rgba(241,239,232,.85); border-radius:999px; background:transparent; color:var(--ink); cursor:pointer; font:11px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.16em; transition:background .2s,color .2s,transform .2s; }
+    .submit:hover { transform:translateY(-2px); background:var(--ink); color:var(--bg); }
+    .direct { margin:33px 0 0; color:var(--dim); font-size:12px; line-height:1.7; }
+    .direct a { color:var(--soft); text-decoration:underline; text-underline-offset:4px; }
+    footer { display:flex; justify-content:space-between; gap:20px; width:min(100% - 44px,720px); margin:0 auto; padding:20px 0 27px; border-top:1px solid var(--rule); color:var(--dim); font:10px ui-monospace,SFMono-Regular,Menlo,monospace; }
+    footer a { color:var(--soft); }
+    @media(max-width:540px) { .topbar { height:66px; padding:0 18px; } main { width:calc(100% - 36px); padding-top:75px; } .intro { font-size:14px; } footer { width:calc(100% - 36px); font-size:9px; } }
+    @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="creator-portfolio.html" aria-label="Back to Five One portfolio">FIVE<span aria-hidden="true"></span>ONE</a>
+    <a class="back" href="creator-portfolio.html">← BACK TO PORTFOLIO</a>
+  </header>
+  <main>
+    <p class="eyebrow">Five One · Contact</p>
+    <h1>Say hello.</h1>
+    <p class="intro">For inquiries, collaborations, or just to say hello, send a note below. It will open a new email in your mail app, ready for you to send.</p>
+    <form id="contact-form">
+      <label>Your name<input name="name" autocomplete="name" placeholder="Name" required></label>
+      <label>Your email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+      <label>Your message<textarea name="message" placeholder="Tell me a little about your project…" required></textarea></label>
+      <button class="submit" type="submit">PREPARE EMAIL ↗</button>
+    </form>
+    <p class="direct">Prefer to email directly? <a id="direct-email" href="mailto:your@email.com">your@email.com</a><br><small>Replace <code>your@email.com</code> in this file with your contact email.</small></p>
+  </main>
+  <footer><span>© 2026 FIVE ONE</span><a href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noreferrer">@fiveone.agency ↗</a></footer>
+  <script>
+    // Change this address to the inbox where you want collaboration inquiries delivered.
+    const recipient = 'your@email.com';
+    document.getElementById('contact-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const values = new FormData(event.currentTarget);
+      const subject = encodeURIComponent(`Portfolio inquiry from ${values.get('name')}`);
+      const body = encodeURIComponent(`Name: ${values.get('name')}\nEmail: ${values.get('email')}\n\n${values.get('message')}`);
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
