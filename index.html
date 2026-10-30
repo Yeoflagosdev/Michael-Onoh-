@@ -30,8 +30,8 @@
     .shell { width: min(100% - 64px, 1440px); margin: 0 auto; }
 
     .topbar { position: absolute; z-index: 5; top: 0; left: 0; width: 100%; height: 78px; display: flex; align-items: center; justify-content: space-between; padding: 0 4.6vw; }
-    .logo { font-size: 17px; font-weight: 800; letter-spacing: -.08em; }
-    .logo span { display: inline-block; width: 22px; height: 2px; margin-left: 3px; vertical-align: middle; background: var(--ink); box-shadow: 0 5px 0 var(--ink), 0 -5px 0 var(--ink); }
+    .logo { display: inline-flex; align-items: center; }
+    .logo img { display: block; width: 156px; max-width: 38vw; height: auto; }
     .menu-button { width: 38px; height: 38px; display: grid; place-content: center; gap: 5px; border: 1px solid transparent; border-radius: 50%; background: transparent; cursor: pointer; transition: .25s; }
     .menu-button:hover { border-color: var(--rule); background: var(--glass); }
     .menu-button i { display: block; width: 19px; height: 1px; background: var(--ink); }
@@ -163,7 +163,7 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="logo" href="#home" aria-label="Five One home">FIVE<span aria-hidden="true"></span>ONE</a>
+    <a class="logo" href="#home" aria-label="Five One home"><img src="fiveone-wordmark.png" alt="Five One Agency"></a>
     <a class="menu-button" href="menu.html" aria-label="Open website menu"><i></i><i></i><i></i></a>
   </header>
 

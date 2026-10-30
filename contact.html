@@ -11,8 +11,8 @@
     body { min-height:100vh; margin:0; background:radial-gradient(ellipse at 50% 35%,rgba(216,217,203,.055),transparent 42%),var(--bg); }
     a { color:inherit; text-decoration:none; }
     .topbar { height:78px; display:flex; align-items:center; justify-content:space-between; padding:0 4.6vw; border-bottom:1px solid var(--rule); }
-    .logo { font-size:17px; font-weight:800; letter-spacing:-.08em; }
-    .logo span { display:inline-block; width:22px; height:2px; margin-left:3px; vertical-align:middle; background:var(--ink); box-shadow:0 5px 0 var(--ink),0 -5px 0 var(--ink); }
+    .logo { display:inline-flex; align-items:center; }
+    .logo img { display:block; width:156px; max-width:38vw; height:auto; }
     .back { color:var(--soft); font:10px ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.13em; transition:color .2s; }
     .back:hover { color:var(--ink); }
     main { width:min(100% - 44px,720px); margin:0 auto; padding:clamp(76px,13vh,145px) 0 90px; }
@@ -40,7 +40,7 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="logo" href="creator-portfolio.html" aria-label="Back to Five One portfolio">FIVE<span aria-hidden="true"></span>ONE</a>
+    <a class="logo" href="creator-portfolio.html" aria-label="Back to Five One portfolio"><img src="fiveone-wordmark.png" alt="Five One Agency"></a>
     <a class="back" href="creator-portfolio.html">← BACK TO PORTFOLIO</a>
   </header>
   <main>
