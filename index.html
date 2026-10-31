@@ -251,7 +251,7 @@
             <div class="card-glass"><div><p class="card-title">Moment with @ninthgrid__</p><span class="card-type">Collaboration</span></div><a class="show-me" href="https://www.instagram.com/reel/DZK6HEQMr6h/?utm_source=ig_web_copy_link&amp;mdxt=MWQ1ZGUxMzBkMA==&amp;srtk=MWQ1ZGUxMzBkMA==" target="_blank" rel="noopener noreferrer" aria-label="View the Ninth Grid Instagram post">VIEW POST ↗</a></div>
           </div>
           <div class="work-card art-two collab-video-card collab-preview-card">
-            <video class="collab-video" muted autoplay loop playsinline preload="metadata" aria-label="Ai Lagos collaboration video preview">
+            <video class="collab-video" playsinline preload="metadata" aria-label="Ai Lagos collaboration video preview">
               <source src="ai-lagos-collaboration.mp4" type="video/mp4">
               Your browser does not support embedded video.
             </video>
@@ -280,6 +280,19 @@
       if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
     }), { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
+
+    document.querySelectorAll('video').forEach(video => {
+      const hoverTarget = video.closest('.work-card') || video;
+      hoverTarget.addEventListener('pointerenter', event => {
+        if (event.pointerType !== 'mouse') return;
+        video.muted = true;
+        const playback = video.play();
+        if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+      });
+      hoverTarget.addEventListener('pointerleave', event => {
+        if (event.pointerType === 'mouse') video.pause();
+      });
+    });
 
     const hero = document.querySelector('.hero');
     const heroShots = [...document.querySelectorAll('.hero-shot')];
