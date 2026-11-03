@@ -6,3 +6,4 @@ menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu
 document.querySelector('#year').textContent=new Date().getFullYear();
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.project-video').forEach(video=>{const label=video.parentElement.querySelector('.player-label');const setState=playing=>{label.lastChild.textContent=playing?' LOOPING PREVIEW':' PAUSED PREVIEW';label.classList.toggle('is-paused',!playing)};video.addEventListener('play',()=>setState(true));video.addEventListener('pause',()=>setState(false));});
