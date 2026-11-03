@@ -42,6 +42,7 @@
     .hero-shot { position: absolute; display: block; width: clamp(170px, 20vw, 330px); height: 37vh; object-fit: cover; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 20px 70px rgba(0,0,0,.4); opacity: .72; pointer-events: auto; transform-style: preserve-3d; transform: perspective(900px) rotateX(var(--hero-tilt-y, 0deg)) rotateY(var(--hero-tilt-x, 0deg)) rotate(var(--hero-rotation, 0deg)); transition: transform .22s ease, filter .3s ease, opacity .3s ease; animation: drift 8s ease-in-out infinite alternate; }
     .hero-shot:nth-child(even) { animation-delay: -4s; }
     .hero-shot.is-active { opacity: .96; }
+    .hero-empty { background: rgba(241,239,232,.035); border-color: rgba(255,255,255,.2); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
     .hero-shot.shot-a { left: -3%; top: -15%; width: 20vw; height: 36vh; --hero-rotation: -5deg; }
     .hero-shot.shot-b { left: 27%; top: -22%; width: 21vw; height: 40vh; --hero-rotation: 2deg; }
     .hero-shot.shot-c { right: -3%; top: -18%; width: 20vw; height: 36vh; --hero-rotation: 5deg; }
@@ -50,6 +51,11 @@
     .hero-shot.shot-f { left: 30%; bottom: -23%; width: 21vw; height: 38vh; --hero-rotation: 4deg; }
     .hero-shot.shot-g { left: -6%; bottom: -17%; width: 19vw; height: 30vh; --hero-rotation: 5deg; }
     .hero-shot.shot-h { right: 15%; bottom: -26%; width: 22vw; height: 36vh; --hero-rotation: -5deg; }
+    .hero-shot.shot-i { left: 19%; top: 4%; width: 13vw; height: 22vh; --hero-rotation: 3deg; }
+    .hero-shot.shot-j { right: 19%; top: 3%; width: 13vw; height: 22vh; --hero-rotation: -3deg; }
+    .hero-shot.shot-k { left: -8%; top: 59%; width: 16vw; height: 24vh; --hero-rotation: 4deg; }
+    .hero-shot.shot-l { right: -8%; top: 59%; width: 16vw; height: 24vh; --hero-rotation: -4deg; }
+    .hero-shot.shot-m { left: 42%; bottom: -28%; width: 15vw; height: 24vh; --hero-rotation: 2deg; }
     .hero-content { position: relative; z-index: 1; width: 100%; pointer-events: none; }
     .hero-content a { pointer-events: auto; }
     .hero h1 { text-shadow: 0 2px 28px rgba(17,17,15,.48); }
@@ -145,6 +151,11 @@
       .hero-shot.shot-f { left: 17%; bottom: -17%; width: 43vw; height: 29vh; }
       .hero-shot.shot-g { left: -20%; bottom: -15%; width: 38vw; height: 26vh; }
       .hero-shot.shot-h { right: 13%; bottom: -20%; width: 41vw; height: 27vh; }
+      .hero-shot.shot-i { left: 12%; top: -15%; width: 28vw; height: 20vh; }
+      .hero-shot.shot-j { right: 10%; top: -13%; width: 27vw; height: 19vh; }
+      .hero-shot.shot-k { left: -19%; top: 62%; width: 32vw; height: 21vh; }
+      .hero-shot.shot-l { right: -18%; top: 63%; width: 31vw; height: 20vh; }
+      .hero-shot.shot-m { left: 36%; bottom: -24%; width: 30vw; height: 20vh; }
       .hero-copy { max-width: 360px; margin-top: 25px; }
       .outline-link { min-width: 190px; min-height: 52px; }
       .section { padding: 64px 0 68px; }
@@ -183,7 +194,7 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-collage" aria-hidden="true"><img class="hero-shot shot-a" src="hero-frame-1.jpg" alt="" loading="eager"><img class="hero-shot shot-b" src="hero-frame-2.jpg" alt="" loading="eager"><img class="hero-shot shot-c" src="hero-frame-3.jpg" alt="" loading="eager"><img class="hero-shot shot-d" src="hero-frame-4.jpg" alt="" loading="eager"><img class="hero-shot shot-e" src="hero-frame-5.jpg" alt="" loading="eager"><img class="hero-shot shot-f" src="hero-frame-6.jpg" alt="" loading="eager"><img class="hero-shot shot-g" src="hero-frame-7.jpg" alt="" loading="eager"><img class="hero-shot shot-h" src="hero-frame-8.jpg" alt="" loading="eager"></div>
+      <div class="hero-collage" aria-hidden="true"><img class="hero-shot shot-a" src="hero-frame-1.jpg" alt="" loading="eager"><img class="hero-shot shot-b" src="hero-frame-2.jpg" alt="" loading="eager"><img class="hero-shot shot-c" src="hero-frame-3.jpg" alt="" loading="eager"><img class="hero-shot shot-d" src="hero-frame-4.jpg" alt="" loading="eager"><img class="hero-shot shot-e" src="hero-frame-5.jpg" alt="" loading="eager"><img class="hero-shot shot-f" src="hero-frame-6.jpg" alt="" loading="eager"><img class="hero-shot shot-g" src="hero-frame-7.jpg" alt="" loading="eager"><img class="hero-shot shot-h" src="hero-frame-8.jpg" alt="" loading="eager"><div class="hero-shot hero-empty shot-i"></div><div class="hero-shot hero-empty shot-j"></div><div class="hero-shot hero-empty shot-k"></div><div class="hero-shot hero-empty shot-l"></div><div class="hero-shot hero-empty shot-m"></div></div>
       <div class="hero-content">
         <p class="pronunciation">(five · one)</p>
         <h1><span>FIVE ONE</span></h1>
