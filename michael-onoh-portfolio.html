@@ -51,10 +51,10 @@
       <div class="section-label"><span>02 / SELECTED WORK</span><span>2022 — 2025</span></div>
       <div class="work-heading"><h2 class="reveal">Good work<br>leaves a <em>mark.</em></h2><span class="work-count">( 04 PROJECTS )</span></div>
       <div class="project-grid">
-        <article class="project project-large reveal"><div class="project-image image-one"><video class="project-video" muted loop playsinline controls preload="metadata" poster="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/hero-frame-3.jpg"><source src="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/gtco-fashion-weekend-thebrandajeye.mp4" type="video/mp4"></video><span class="image-tag">01 / BRAND FILM</span><span class="player-label"><i></i> LOOPING PREVIEW</span><a class="project-arrow instagram-arrow" href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noopener noreferrer" aria-label="View GTCO Fashion Weekend on Instagram">↗</a></div><div class="project-info"><h3>GTCO Fashion Weekend</h3><span>CAMPAIGN FILM · LAGOS</span></div></article>
-        <article class="project project-offset reveal"><div class="project-image image-two"><video class="project-video" muted loop playsinline controls preload="metadata" poster="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/ninthgrid-collaboration-poster.jpg"><source src="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/moment-with-ninthgrid.mp4" type="video/mp4"></video><span class="image-tag">02 / COLLABORATION</span><span class="player-label"><i></i> LOOPING PREVIEW</span><a class="project-arrow instagram-arrow" href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noopener noreferrer" aria-label="View Ninthgrid collaboration on Instagram">↗</a></div><div class="project-info"><h3>A Moment with Ninthgrid</h3><span>CREATIVE COLLABORATION · FILM</span></div></article>
-        <article class="project reveal"><div class="project-image image-three"><video class="project-video" muted loop playsinline controls preload="metadata" poster="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/hero-frame-6.jpg"><source src="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/show-me-your-color-style.mp4" type="video/mp4"></video><span class="image-tag">03 / STYLE FILM</span><span class="player-label"><i></i> LOOPING PREVIEW</span><a class="project-arrow instagram-arrow" href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noopener noreferrer" aria-label="View Show Me Your Color on Instagram">↗</a></div><div class="project-info"><h3>Show Me Your Color</h3><span>STYLE FILM · VISUAL STORYTELLING</span></div></article>
-        <article class="project project-offset reveal"><div class="project-image image-four"><video class="project-video" muted loop playsinline controls preload="metadata" poster="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/soson-construction-poster.jpg"><source src="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/soson-construction-reel.mp4" type="video/mp4"></video><span class="image-tag">04 / BRAND FILM</span><span class="player-label"><i></i> LOOPING PREVIEW</span><a class="project-arrow instagram-arrow" href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noopener noreferrer" aria-label="View SoSon Construction film on Instagram">↗</a></div><div class="project-info"><h3>SoSon Construction</h3><span>BRAND STORY · REEL</span></div></article>
+        <article class="project project-large reveal"><div class="project-image image-one"><video id="brandFilmPlayer" class="project-video" autoplay muted playsinline preload="auto" poster="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/hero-frame-3.jpg"><source src="brand-film/01-ninthgrid-meetup.mp4" type="video/mp4"></video><span class="image-tag">01 / BRAND FILM</span><a class="project-arrow instagram-arrow" href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noopener noreferrer" aria-label="View Motion in Stillness on Instagram">↗</a></div><div class="project-info"><h3>Motion in Stillness</h3><span>BRAND FILM · 2026</span></div></article>
+        <article class="project project-offset reveal"><div class="project-image image-two"><div class="image-word image-word-small">FORM<br>FOLLOWS<br>FEELING.</div><span class="image-tag">02 / IDENTITY</span><a class="project-arrow" href="#contact" aria-label="Ask about Common Ground">↗</a></div><div class="project-info"><h3>Common Ground</h3><span>BRAND STRATEGY · IDENTITY · 2024</span></div></article>
+        <article class="project reveal"><div class="project-image image-three"><div class="image-word italic-word">A softer<br>kind of bold.</div><span class="image-tag">03 / CAMPAIGN</span><a class="project-arrow" href="#contact" aria-label="Ask about Soft Focus">↗</a></div><div class="project-info"><h3>Soft Focus</h3><span>CAMPAIGN · DIRECTION · 2024</span></div></article>
+        <article class="project project-offset reveal"><div class="project-image image-four"><div class="image-word number-word"><span>THE</span>NEW<br>ORDINARY</div><span class="image-tag">04 / DIGITAL</span><a class="project-arrow" href="#contact" aria-label="Ask about Everyday Future">↗</a></div><div class="project-info"><h3>Everyday Future</h3><span>DIGITAL EXPERIENCE · 2023</span></div></article>
       </div>
       <a class="all-work" href="#contact"><span>HAVE A GOOD ONE IN MIND?</span><b>LET’S MAKE IT HAPPEN <i>↗</i></b></a>
     </section>
@@ -72,8 +72,24 @@ menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu
 document.querySelector('#year').textContent=new Date().getFullYear();
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const videoObserver=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{if(isIntersecting){target.play().catch(()=>{})}else{target.pause()}}),{threshold:.25});
-document.querySelectorAll('.project-video').forEach(video=>{const label=video.parentElement.querySelector('.player-label');const setState=playing=>{label.lastChild.textContent=playing?' LOOPING PREVIEW':' PAUSED PREVIEW';label.classList.toggle('is-paused',!playing)};videoObserver.observe(video);video.addEventListener('play',()=>setState(true));video.addEventListener('pause',()=>setState(false));});
+const brandFilmPlayer=document.querySelector('#brandFilmPlayer');
+if(brandFilmPlayer){
+  const brandFilmClips=[
+    'brand-film/01-ninthgrid-meetup.mp4',
+    'brand-film/02-love-ojimba-00.mp4',
+    'brand-film/02-love-ojimba-01.mp4',
+    'brand-film/02-love-ojimba-02.mp4',
+    'brand-film/03-ajeye-00.mp4',
+    'brand-film/03-ajeye-01.mp4'
+  ];
+  let activeClip=0;
+  brandFilmPlayer.addEventListener('ended',()=>{
+    activeClip=(activeClip+1)%brandFilmClips.length;
+    brandFilmPlayer.src=brandFilmClips[activeClip];
+    brandFilmPlayer.load();
+    brandFilmPlayer.play().catch(()=>{});
+  });
+}
 
   </script>
 </body>
