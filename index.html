@@ -16,10 +16,6 @@
 .project-image:has(.project-video):before{display:none}.project-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;background:#191916}.project-image:has(.project-video):after{z-index:2;background:linear-gradient(180deg,rgba(0,0,0,.24),transparent 28%,transparent 64%,rgba(0,0,0,.36));pointer-events:none}.project-image:has(.project-video):hover:after{background:linear-gradient(180deg,rgba(0,0,0,.15),transparent 28%,transparent 64%,rgba(0,0,0,.26))}.project-image .image-tag,.player-label,.instagram-arrow{z-index:3}.player-label{position:absolute;left:16px;bottom:16px;display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid rgba(255,255,255,.42);background:rgba(15,15,14,.55);backdrop-filter:blur(8px);color:#fff;font-size:9px;font-family:var(--mono);letter-spacing:.05em}.player-label i{width:6px;height:6px;background:#a5c889;border-radius:50%;box-shadow:0 0 8px #a5c889}.instagram-arrow{top:17px;right:17px;bottom:auto;background:rgba(15,15,14,.45);backdrop-filter:blur(8px)}
 
     .menu-toggle{position:relative}
-    .menu-toggle::before{content:"";position:absolute;inset:-3px;border:1px solid var(--orange);border-radius:50%;opacity:0;pointer-events:none}
-    .menu-toggle.active::before{animation:menu-ring 1.35s ease-out .1s infinite}
-    @keyframes menu-ring{0%{transform:scale(.86);opacity:0}10%{opacity:.85}100%{transform:scale(1.55);opacity:0}}
-    @media (prefers-reduced-motion:reduce){.menu-toggle.active::before{animation:none;opacity:.55}}
   </style>
 </head>
 <body>
