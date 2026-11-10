@@ -17,8 +17,8 @@
 
     .menu-toggle{position:relative}
     .menu-toggle::before{content:"";position:absolute;inset:-3px;border:1px solid var(--orange);border-radius:50%;opacity:0;pointer-events:none}
-    .menu-toggle.active::before{animation:menu-ring 1.35s ease-out infinite}
-    @keyframes menu-ring{0%{transform:scale(.86);opacity:.85}100%{transform:scale(1.55);opacity:0}}
+    .menu-toggle.active::before{animation:menu-ring 1.35s ease-out .1s infinite}
+    @keyframes menu-ring{0%{transform:scale(.86);opacity:0}10%{opacity:.85}100%{transform:scale(1.55);opacity:0}}
     @media (prefers-reduced-motion:reduce){.menu-toggle.active::before{animation:none;opacity:.55}}
   </style>
 </head>
