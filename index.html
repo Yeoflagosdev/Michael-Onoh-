@@ -25,28 +25,17 @@
 .campaign-cover{isolation:isolate;background:#171715}
 .campaign-cover:before{display:none}
 .campaign-cover:after{z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(12,12,12,.16),transparent 40%,rgba(12,12,12,.32))}
-.campaign-gallery{position:absolute;inset:0;z-index:1;overflow:hidden;display:flex;align-items:center;pointer-events:none}
-.campaign-track{display:flex;align-items:center;width:max-content;height:100%;animation:campaign-drift 82s linear infinite alternate;will-change:transform}
-.campaign-set{display:flex;align-items:center;gap:clamp(12px,1.35vw,21px);height:100%;padding:0 clamp(16px,2vw,30px)}
-.campaign-photo{position:relative;flex:0 0 clamp(112px,13vw,194px);height:76%;overflow:hidden;transform:none}
-.campaign-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 14%}
-.campaign-photo:nth-child(4n+2){height:62%;transform:translateY(9%)}
-.campaign-photo:nth-child(4n+3){height:83%;transform:translateY(-4%)}
-.campaign-photo:nth-child(4n){height:67%;transform:translateY(7%)}
-.campaign-photo--lead{flex-basis:clamp(210px,23vw,340px);height:92%;transform:none}
-.campaign-photo--lead img{object-position:center 8%}
+.campaign-gallery{position:absolute;inset:0;z-index:1;overflow:hidden}
+.campaign-track{display:flex;width:1500%;height:100%;transition:transform 1.15s cubic-bezier(.76,0,.24,1);will-change:transform}
+.campaign-slide{position:relative;flex:0 0 6.6666667%;height:100%;overflow:hidden}
+.campaign-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 12%;border:0;border-radius:0}
+.campaign-slide:first-child img{object-position:center 8%}
 .campaign-cover .campaign-title{position:absolute;z-index:4;left:clamp(18px,3vw,42px);bottom:8%;margin:0;color:#f1efe9;text-align:left;font-size:clamp(32px,4.6vw,68px);line-height:.88;text-shadow:0 3px 22px rgba(0,0,0,.58);pointer-events:none}
 .campaign-tag{z-index:4}
 .campaign-cover .project-arrow{z-index:4}
-@keyframes campaign-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-@media(max-width:700px){
-  .campaign-track{animation-duration:82s}
-  .campaign-set{gap:12px;padding:0 15px}
-  .campaign-photo{flex-basis:clamp(104px,29vw,154px);height:74%}
-  .campaign-photo--lead{flex-basis:clamp(134px,38vw,190px);height:90%}
-  .campaign-cover .campaign-title{left:17px;bottom:8%;font-size:clamp(31px,9vw,48px)}
-}
-@media(prefers-reduced-motion:reduce){.campaign-track{animation:none;transform:none}}
+@media(max-width:700px){.campaign-cover .campaign-title{left:17px;bottom:8%;font-size:clamp(31px,9vw,48px)}}
+@media(prefers-reduced-motion:reduce){.campaign-track{transition:none}}
+
 
 </style>
 </head>
@@ -85,7 +74,7 @@
       <div class="project-grid">
         <article class="project project-large reveal"><div class="project-image image-one"><video id="brandFilmPlayer" class="project-video" autoplay muted playsinline preload="auto" poster="https://raw.githubusercontent.com/Yeoflagosdev/Michael-Onoh-/main/hero-frame-3.jpg"><source src="brand-film/Ninthgrid - HandBrake 1.mp4" type="video/mp4"></video><span class="image-tag">01 / BRAND FILM</span><a class="project-arrow instagram-arrow" href="https://www.instagram.com/fiveone.agency/" target="_blank" rel="noopener noreferrer" aria-label="View Motion in Stillness on Instagram">↗</a></div><div class="project-info"><h3>Motion in Stillness</h3><span>BRAND FILM · 2026</span></div></article>
         <article class="project project-offset reveal"><div class="project-image image-two"><div class="image-word image-word-small">FORM<br>FOLLOWS<br>FEELING.</div><span class="image-tag">02 / IDENTITY</span><a class="project-arrow" href="#contact" aria-label="Ask about Common Ground">↗</a></div><div class="project-info"><h3>Common Ground</h3><span>BRAND STRATEGY · IDENTITY · 2024</span></div></article>
-        <article class="project reveal"><div class="project-image image-three campaign-cover"><div class="campaign-gallery"><div class="campaign-track"><div class="campaign-set"><div class="campaign-photo campaign-photo--lead"><img src="campaign-gallery-v2/campaign-01.jpg" alt="Purple-tagged portrait" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-02.jpg" alt="Poise in every frame portrait 1" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-03.jpg" alt="Poise in every frame portrait 2" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-04.jpg" alt="Poise in every frame portrait 3" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-05.jpg" alt="Founded in the mysteries of love portrait 1" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-06.jpg" alt="Founded in the mysteries of love portrait 2" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-07.jpg" alt="Captured from heaven graduation portrait" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-08.jpg" alt="Portrait photograph" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-09.jpg" alt="Find Me Beautiful editorial portrait" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-10.jpg" alt="Wine up for brighter days portrait" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-11.jpg" alt="Canon portrait 1" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-12.jpg" alt="Canon portrait 2" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-13.jpg" alt="Canon portrait 3" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-14.jpg" alt="Canon portrait 4" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-15.jpg" alt="Portrait photograph" decoding="async"></div></div><div class="campaign-set" aria-hidden="true"><div class="campaign-photo campaign-photo--lead"><img src="campaign-gallery-v2/campaign-01.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-02.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-03.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-04.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-05.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-06.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-07.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-08.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-09.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-10.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-11.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-12.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-13.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-14.jpg" alt="" decoding="async"></div><div class="campaign-photo"><img src="campaign-gallery-v2/campaign-15.jpg" alt="" decoding="async"></div></div></div></div><div class="image-word italic-word campaign-title">A softer<br>kind of bold.</div><span class="image-tag campaign-tag">03 / CAMPAIGN</span><a class="project-arrow" href="#contact" aria-label="Ask about Soft Focus">↗</a></div><div class="project-info"><h3>Soft Focus</h3><span>CAMPAIGN · DIRECTION · 2024</span></div></article>
+        <article class="project reveal"><div class="project-image image-three campaign-cover"><div class="campaign-gallery"><div class="campaign-track"><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-01.jpg" alt="Purple-tagged portrait" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-02.jpg" alt="Poise in every frame portrait 1" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-03.jpg" alt="Poise in every frame portrait 2" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-04.jpg" alt="Poise in every frame portrait 3" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-05.jpg" alt="Founded in the mysteries of love portrait 1" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-06.jpg" alt="Founded in the mysteries of love portrait 2" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-07.jpg" alt="Captured from heaven graduation portrait" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-08.jpg" alt="Portrait photograph" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-09.jpg" alt="Find Me Beautiful editorial portrait" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-10.jpg" alt="Wine up for brighter days portrait" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-11.jpg" alt="Canon portrait 1" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-12.jpg" alt="Canon portrait 2" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-13.jpg" alt="Canon portrait 3" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-14.jpg" alt="Canon portrait 4" decoding="async"></div><div class="campaign-slide"><img src="campaign-gallery-v2/campaign-15.jpg" alt="Portrait photograph" decoding="async"></div></div></div><div class="image-word italic-word campaign-title">A softer<br>kind of bold.</div><span class="image-tag campaign-tag">03 / CAMPAIGN</span><a class="project-arrow" href="#contact" aria-label="Ask about Soft Focus">↗</a></div><div class="project-info"><h3>Soft Focus</h3><span>CAMPAIGN · DIRECTION · 2024</span></div></article>
         <article class="project project-offset reveal"><div class="project-image image-four"><div class="image-word number-word"><span>THE</span>NEW<br>ORDINARY</div><span class="image-tag">04 / DIGITAL</span><a class="project-arrow" href="#contact" aria-label="Ask about Everyday Future">↗</a></div><div class="project-info"><h3>Everyday Future</h3><span>DIGITAL EXPERIENCE · 2023</span></div></article>
       </div>
       <a class="all-work" href="#contact"><span>HAVE A GOOD ONE IN MIND?</span><b>LET’S MAKE IT HAPPEN <i>↗</i></b></a>
@@ -147,6 +136,18 @@ document.querySelectorAll('.wordmark').forEach(link=>link.addEventListener('clic
 document.querySelector('#year').textContent=new Date().getFullYear();
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const campaignTrack=document.querySelector('.campaign-track');
+if(campaignTrack&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const campaignSlides=Array.from(campaignTrack.children);
+  let campaignIndex=0;
+  let campaignDirection=1;
+  window.setInterval(()=>{
+    if(campaignIndex===campaignSlides.length-1)campaignDirection=-1;
+    else if(campaignIndex===0)campaignDirection=1;
+    campaignIndex+=campaignDirection;
+    campaignTrack.style.transform=`translate3d(-${campaignIndex*(100/campaignSlides.length)}%,0,0)`;
+  },5200);
+}
 const brandFilmPlayer=document.querySelector('#brandFilmPlayer');
 if(brandFilmPlayer){
   const brandFilmClips=[
