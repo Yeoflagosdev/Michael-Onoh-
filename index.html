@@ -28,13 +28,13 @@
 .campaign-gallery{position:absolute;inset:0;z-index:1;overflow:hidden;display:flex;align-items:center;pointer-events:none}
 .campaign-track{display:flex;align-items:center;width:max-content;height:100%;animation:campaign-drift 82s linear infinite alternate;will-change:transform}
 .campaign-set{display:flex;align-items:center;gap:clamp(12px,1.35vw,21px);height:100%;padding:0 clamp(16px,2vw,30px)}
-.campaign-photo{position:relative;flex:0 0 clamp(112px,13vw,194px);height:76%;overflow:hidden;border:1px solid rgba(255,255,255,.36);border-radius:2px;background:#292925;box-shadow:0 16px 40px rgba(0,0,0,.2);transform:rotate(-2deg)}
-.campaign-photo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center center;background:#292925}
-.campaign-photo:nth-child(4n+2){height:62%;transform:translateY(9%) rotate(2.5deg)}
-.campaign-photo:nth-child(4n+3){height:83%;transform:translateY(-4%) rotate(-1deg)}
-.campaign-photo:nth-child(4n){height:67%;transform:translateY(7%) rotate(1.8deg)}
-.campaign-photo--lead{flex-basis:clamp(210px,23vw,340px);height:92%;transform:rotate(-1.2deg);border-color:rgba(255,255,255,.64)}
-.campaign-photo--lead img{object-position:center 35%}
+.campaign-photo{position:relative;flex:0 0 clamp(112px,13vw,194px);height:76%;overflow:hidden;transform:none}
+.campaign-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 14%}
+.campaign-photo:nth-child(4n+2){height:62%;transform:translateY(9%)}
+.campaign-photo:nth-child(4n+3){height:83%;transform:translateY(-4%)}
+.campaign-photo:nth-child(4n){height:67%;transform:translateY(7%)}
+.campaign-photo--lead{flex-basis:clamp(210px,23vw,340px);height:92%;transform:none}
+.campaign-photo--lead img{object-position:center 8%}
 .campaign-cover .campaign-title{position:absolute;z-index:4;left:clamp(18px,3vw,42px);bottom:8%;margin:0;color:#f1efe9;text-align:left;font-size:clamp(32px,4.6vw,68px);line-height:.88;text-shadow:0 3px 22px rgba(0,0,0,.58);pointer-events:none}
 .campaign-tag{z-index:4}
 .campaign-cover .project-arrow{z-index:4}
